@@ -17,6 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
+// The nested function can access the internal variable becuase closures are created alongside functions meaning they can reach out and use data from any outter scope. They will continue searching outward until they find the variable which in this case is one level above. 
 
 
 
