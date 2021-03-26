@@ -111,9 +111,14 @@ console.log(animalNames(zooAnimals))
   */
 
   function USApop(array){
-    /*Your Code Here*/
+    let totalPop = array.reduce(function(acc, item){
+      return acc + item.population
+    }, 0)
+
+    return totalPop
   }
   
+  console.log(USApop(zooAnimals))
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
