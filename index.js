@@ -32,7 +32,7 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 function summation(num) {
   let counter = 0;
   for (let i = 0; i <= num; i++) {
-    counter += i
+    counter += i;
   }
    return counter 
 }
@@ -62,9 +62,14 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  function animalNames(zooAnimals){
+    let displayNames = [];
+    zooAnimals.forEach(function(item) {
+    displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)
+})
+  return displayNames
+}
+console.log(animalNames(zooAnimals))
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -73,9 +78,15 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(array){
+   let lowerArray = array.map(function(item){
+     return item.animal_name.toLowerCase()
+   })
+    return lowerArray
   }
+
+  lowerCaseNames(zooAnimals)
+
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -83,10 +94,15 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+    let lowPop = array.filter(function(item){
+      return (item.population < 5)
+    })
+
+    return lowPop
   }
-  
+
+  console.log(lowPopulationAnimals(zooAnimals))
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -94,7 +110,7 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
+  function USApop(array){
     /*Your Code Here*/
   }
   
